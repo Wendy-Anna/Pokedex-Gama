@@ -1,6 +1,5 @@
 import React from 'react';
 import Routes from './routes';
-import HomeList from './HomeLista';
 
 function App() {
   return (
