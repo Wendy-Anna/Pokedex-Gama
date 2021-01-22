@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import lista from './lista.css'
+import './lista.css';
 import api from '../service/api';
+import { AiOutlineSearch } from "react-icons/ai";
 
 
 function HomeList() {
@@ -27,12 +28,12 @@ function HomeList() {
 
   return (
     <>
-
-      <h1 className="titulo">Pokedex-Gama</h1>
-      <div className="pesquisa">
-        <input type="text" className="pesquisaPokemon" placeholder="Pesquise aqui seu pokemon" />
-
-        <Link to="/pesquisa" > <button className="botaoPesquisaPokemon"> Pesquisar </button> </Link>
+      <div className="container">
+        <h1 className="titulo">Pokedex-Gama</h1>
+        <div className="pesquisa">
+          <input type="text" className="pesquisaPokemon" placeholder="Pesquise aqui seu pokemon" />
+          <Link to="/pesquisa" > <button className="botaoPesquisaPokemon"><AiOutlineSearch size={25} /></button> </Link>
+        </div>
       </div>
       <div className="box-pokemon">
         {pokemon != null ?
@@ -51,8 +52,6 @@ function HomeList() {
           </ul>
           : (<div> className="empty" Loading... </div>)}
         <Link to="/minhaLista"> <button type="button" >Capturar</button> </Link>
-
-
       </div>
     </>
   );

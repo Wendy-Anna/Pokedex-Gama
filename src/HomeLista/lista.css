@@ -1,10 +1,3 @@
-.titulo{
-  color: blueviolet;
-  width: 230px;
-  padding: 10px;  
-  border: 10px solid black;
-}
-
 .box-pokemon{
   width: 700px;
   height: 550;
@@ -25,7 +18,52 @@
   border: 5px solid black;
 }
 
+/* Tamiris - estilização da Home */
+
+.titulo{
+  padding-left: 3%;
+  padding-right: 2%;
+  font-size: 3.3rem;
+  color: tomato;
+  text-shadow: 4px 4px #3c5aa6;
+  background-color: white;
+  font-family: sans-serif;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 .pesquisa{
   display: flex;
   justify-content: flex-end;
+  margin-left: 50%;
+  margin-top: 3%;
+}
+.pesquisaPokemon{
+  border-radius: 20px;
+  box-shadow: 2px 3px 3px #12275c;
+  width: 250px;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+.botaoPesquisaPokemon{
+  border-radius: 20px;
+  cursor: pointer;
+  padding-right: 10%;
+  color:white;
+  background-color: transparent;
+}
+.botaoPesquisaPokemon, .pesquisaPokemon{
+  height: 30%;
+  border: none;
+}
+.botaoPesquisaPokemon:focus, .pesquisaPokemon:focus{
+  outline: none;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  background-image: url('./background.jpg');
+  background-repeat: no-repeat;
+  background-position: 100%;
+  background-size: 100%;
+  margin-bottom: 3%;
 }
