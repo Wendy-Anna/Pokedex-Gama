@@ -35,6 +35,7 @@ function HomeList() {
           <Link to="/pesquisa" > <button className="botaoPesquisaPokemon"><AiOutlineSearch size={25} /></button> </Link>
         </div>
       </div>
+
       <div className="box-pokemon">
         {pokemon != null ?
           <ul>
