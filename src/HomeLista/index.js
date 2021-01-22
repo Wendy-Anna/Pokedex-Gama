@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import lista from './lista.css'
 import api from '../service/api';
 
+
 function HomeList() {
   const [pokemon, setPokemon] = useState([]);
   const [types, setTypes] = useState([]);
@@ -26,6 +27,10 @@ function HomeList() {
   return (
     <>
       <h1 className="titulo">Pokedex-Gama</h1>
+      <div className="pesquisa">
+        <input type="text" className="pesquisaPokemon" placeholder="Pesquise aqui seu pokemon" />
+        <button className="botaoPesquisaPokemon"> Pesquisar </button>
+      </div>
       <div className="box-pokemon">
         {pokemon != null ?
           <ul>
