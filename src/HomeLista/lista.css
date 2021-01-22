@@ -1,0 +1,26 @@
+.titulo{
+  color: blueviolet;
+  width: 230px;
+  padding: 10px;  
+  border: 10px solid black;
+}
+
+.box-pokemon{
+  width: 700px;
+  height: 550;
+  padding: 50px;  
+  border: 10px solid black;
+}
+
+.inf-pokemon{
+  display: flex;
+  justify-content: center;
+}
+
+.imagem-pokemon{
+  display: flex;
+  justify-content: flex-start;
+  width: 50px;
+  height: 50px;
+  border: 5px solid black;
+}
