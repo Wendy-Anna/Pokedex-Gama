@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import lista from './lista.css'
 import api from '../service/api';
 
@@ -26,10 +27,12 @@ function HomeList() {
 
   return (
     <>
+
       <h1 className="titulo">Pokedex-Gama</h1>
       <div className="pesquisa">
         <input type="text" className="pesquisaPokemon" placeholder="Pesquise aqui seu pokemon" />
-        <button className="botaoPesquisaPokemon"> Pesquisar </button>
+
+        <Link to="/pesquisa" > <button className="botaoPesquisaPokemon"> Pesquisar </button> </Link>
       </div>
       <div className="box-pokemon">
         {pokemon != null ?
@@ -47,8 +50,9 @@ function HomeList() {
 
           </ul>
           : (<div> className="empty" Loading... </div>)}
+        <Link to="/minhaLista"> <button type="button" >Capturar</button> </Link>
 
-        <button type="button" >Capturar</button>
+
       </div>
     </>
   );
