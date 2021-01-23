@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './lista.css';
 import api from '../service/api';
 import { AiOutlineSearch } from "react-icons/ai";
-import Pokemon from '../component';
+import Pokemon from '../component/Pokemon';
 
 function HomeList() {
   const [pokemon, setPokemon] = useState([]);
@@ -38,7 +38,7 @@ function HomeList() {
 
   return (
     <>
-      <div className="container">
+      <div className="header-container container">
         <h1 className="titulo">Pokedex-Gama</h1>
         <div className="pesquisa">
           <input type="text" className="pesquisaPokemon" placeholder="Pesquise aqui seu pokemon" />
@@ -46,18 +46,20 @@ function HomeList() {
         </div>
       </div>
 
+      <div className="container">
 
-
-      {
-        pokemon ?
-          <>
-            {
-              pokemon.map(element => <Pokemon p={element}> </Pokemon>)
-            }
-          </>
-          : (<div className="empty"> Loading... </div>)
-      }
-
+        <div className="row">
+          {
+            pokemon ?
+              <>
+                {
+                  pokemon.map(element => <Pokemon p={element}> </Pokemon>)
+                }
+              </>
+              : (<div className="empty"> Loading... </div>)
+          }
+        </div>
+      </div>
     </>
   );
 }
