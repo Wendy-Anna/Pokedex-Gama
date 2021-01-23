@@ -47,17 +47,17 @@ function HomeList() {
       </div>
 
 
-      {pokemon != null ?
-        <>
-          {
-            pokemon.map(element => {
-              <Pokemon p={element}> </Pokemon>
-              console.log(element);
-            })
-          }
-        </>
-        : (<div className="empty"> Loading... </div>)
+
+      {
+        pokemon ?
+          <>
+            {
+              pokemon.map(element => <Pokemon p={element}> </Pokemon>)
+            }
+          </>
+          : (<div className="empty"> Loading... </div>)
       }
+
     </>
   );
 }
