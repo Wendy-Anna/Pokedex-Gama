@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import "./index.css";
+import { Button, Card, Row, Col } from 'react-materialize';
 
 export default function Pokemon({ p }) {
-  console.log(p);
-  console.log("-----");
   return (
-    <div className="box-pokemon">
+
+    <div className="col s6 card ">
       <ul>
         <img src={p.sprites != null ?
           p.sprites.back_default
@@ -14,7 +15,9 @@ export default function Pokemon({ p }) {
         <li className="inf-pokemon">Nome do pokemon: {p.name} </li>
       </ul>
       <Link to="/minhaLista"> <button type="button" >Capturar</button> </Link>
+
     </div>
+
   );
 }
 

@@ -1,5 +1,5 @@
 .box-pokemon{
-  width: 700px;
+  width: 200px;
   height: 550;
   padding: 50px;  
   border: 10px solid black;
@@ -58,7 +58,7 @@
 .botaoPesquisaPokemon:focus, .pesquisaPokemon:focus{
   outline: none;
 }
-.container{
+.header-container{
   display: flex;
   flex-direction: row;
   background-image: url('./background.jpg');
