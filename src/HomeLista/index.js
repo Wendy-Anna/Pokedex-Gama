@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './lista.css';
 import api from '../service/api';
 import { AiOutlineSearch } from "react-icons/ai";
-
+import Pokemon from '../component';
 
 function HomeList() {
   const [pokemon, setPokemon] = useState([]);
@@ -11,12 +11,22 @@ function HomeList() {
 
   useEffect(() => {
     async function loadPokemon() {
-      const response = await api.get("/pokemon/1")
-      setPokemon(response.data);
-      setTypes(response.data.types);
+      const response = await api.get("/pokemon")
+      await buscaPokemon(response.data.results)
+      // setTypes(result.types);
     }
     loadPokemon();
   }, []);
+
+  async function buscaPokemon(data) {
+    const pok = []
+    const promises = data.map(async response =>
+      pok.push(await fetch(response.url).then(res => res.json().then(data => data)))
+    );
+    await Promise.all(promises);
+
+    setPokemon(pok);
+  }
 
   function salveType(data) {
     const typeName = [];
@@ -36,24 +46,18 @@ function HomeList() {
         </div>
       </div>
 
-      <div className="box-pokemon">
-        {pokemon != null ?
-          <ul>
-            <img src={pokemon.sprites != null ?
-              pokemon.sprites.back_default
-              : " "} className="imagem-pokemon" />
-            <li className="inf-pokemon">Número: {pokemon.id}  </li>
-            <li className="inf-pokemon">Nome do pokemon: {pokemon.name} </li>
-            {types != null ?
-              <li className="inf-pokemon">Tipos do pokemon:
-            {types.map(t => " " + t.type.name + "; ")}
-              </li>
-              : ''}
 
-          </ul>
-          : (<div> className="empty" Loading... </div>)}
-        <Link to="/minhaLista"> <button type="button" >Capturar</button> </Link>
-      </div>
+
+      {
+        pokemon ?
+          <>
+            {
+              pokemon.map(element => <Pokemon p={element}> </Pokemon>)
+            }
+          </>
+          : (<div className="empty"> Loading... </div>)
+      }
+
     </>
   );
 }
