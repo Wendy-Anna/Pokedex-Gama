@@ -12,7 +12,7 @@ export default function Pokemon({ p }) {
           p.sprites.back_default
           : " "} className="imagem-pokemon" />
         <li className="inf-pokemon">Número: {p.id}  </li>
-        <li className="inf-pokemon">Nome do pokemon: {p.name} </li>
+        <li className="inf-pokemon">Nome do pokémon: {p.name} </li>
       </ul>
       <Link to="/minhaLista"> <button type="button" >Capturar</button> </Link>
 
@@ -23,7 +23,7 @@ export default function Pokemon({ p }) {
 
 {/* {
       types != null ?
-        <li className="inf-pokemon">Tipos do pokemon:
+        <li className="inf-pokemon">Tipo do pokémon:
        {types.map(t => " " + t.type.name + "; ")}
         </li>
         : ''
